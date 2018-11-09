@@ -1,11 +1,21 @@
+#!/bin/bash
 sudo apt-get update
-sudo apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev
-git clone https://github.com/xmrig/xmrig.git
-cd xmrig
-mkdir build
-cd build
-cmake ..
-make
-sudo sysctl -w vm.nr_hugepages=$((`grep -c ^processor /proc/cpuinfo` * 3))
-wget https://www.dropbox.com/s/og5693ujbkaxgwk/config.json
-./xmrig --donate-level 0 -o asia.cryptonight-hub.miningpoolhub.com:20580 -u kieungoc90.1 -p 123 -k
+sudo apt-get install openjdk-8-jdk maven git gcc make -y
+sudo apt-get install build-essential -y
+cd
+git clone git://github.com/Programmerdan/arionum-java
+cd arionum-java/arionum-miner
+git checkout investigate
+touch config.cfg
+chmod 755 config.cfg
+echo "pool
+http://aropool.com/
+PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSD1DN5yG2gYa9HZU5padMCMWtfaEr2qsRsdegoQZ9w7eLUAJSPjWSq1tN98b97kUp4A1s9VTjTUrCjBd4nVpxoyHAo
+enhanced
+true
+hostname" > config.cfg
+mvn clean package
+chmod +x build-argon.sh
+./build-argon.sh
+chmod +x run.sh
+tmux new-session -d -s my_session && './run.sh'
