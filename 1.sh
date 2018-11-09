@@ -10,7 +10,7 @@ touch config.cfg
 chmod 755 config.cfg
 echo "pool
 http://aropool.com/
-PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSD1DN5yG2gYa9HZU5padMCMWtfaEr2qsRsdegoQZ9w7eLUAJSPjWSq1tN98b97kUp4A1s9VTjTUrCjBd4nVpxoyHAo
+Byf1VQ8U7DPkMKKQWGaxKETqAmpcmmf6NB7nTecW3wWKpRGpdGhATZsUjLz38rVixkkonAVBsUC3fMLAKC8GsWH
 1
 enhanced
 true
